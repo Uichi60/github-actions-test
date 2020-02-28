@@ -12,11 +12,13 @@ jobs:
     steps:
       - name: sleep 45sec
         run: sleep 45
-      - name: check stats
+      - name: check success
         if: success()
         run: echo "success"
+      - name: check failure
         if: failure()
         run: echo "failure"
+      - name: check cancelled
         if: cancelled()
         run: echo "cancelled"
       - name: try failure
