@@ -10,8 +10,30 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 1
     steps:
-      - name: sleep
-        run: sleep 90
+      - name: sleep 45sec
+        run: sleep 45
+      - name: check success
+        if: success()
+        run: echo "success"
+      - name: check failure
+        if: failure()
+        run: echo "failure"
+      - name: check cancelled
+        if: cancelled()
+        run: echo "cancelled"
+      - name: sleep 45sec
+        run: sleep 45
+      - name: check success
+        if: success()
+        run: echo "success"
+      - name: check failure
+        if: failure()
+        run: echo "failure"
+      - name: check cancelled
+        if: cancelled()
+        run: echo "cancelled"
+      - name: sleep 30sec
+        run: sleep 30
       - name: check success
         if: success()
         run: echo "success"
