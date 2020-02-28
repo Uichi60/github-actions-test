@@ -18,3 +18,6 @@ jobs:
       - name: check failure
         if: failure()
         run: echo "failure"
+      - name: check canceled
+        if: canceled()
+        run: echo "canceled"
