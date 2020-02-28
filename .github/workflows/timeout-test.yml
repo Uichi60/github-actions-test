@@ -13,7 +13,8 @@ jobs:
       - name: sleep
         run: sleep 90
       - name: check success
+        if: success()
         run: echo "success"
       - name: check failure
-        if: failure
+        if: failure()
         run: echo "failure"
