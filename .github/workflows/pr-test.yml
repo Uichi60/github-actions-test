@@ -1,0 +1,15 @@
+name: pr-marge-test
+
+on:
+  pull_request:
+    type: closed
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check head-ref
+        if: startsWith(github.head_ref, 'feature')
+        run: echo "complete"
