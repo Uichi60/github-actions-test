@@ -8,10 +8,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 1
+    timeout-minutes: 5
     steps:
-      - name: sleep 45sec
-        run: sleep 45
+      - name: sleep 75sec
+        timeout-minutes: 1
+        run: sleep 75
       # - name: try failure
       #   run: false
       - name: sleep 30sec
@@ -25,3 +26,8 @@ jobs:
       - name: check cancelled
         if: cancelled()
         run: echo "cancelled"
+      - name: check always
+        if: always()
+        run: echo "always"
+      - name: check not if
+        run: echo "not if"
