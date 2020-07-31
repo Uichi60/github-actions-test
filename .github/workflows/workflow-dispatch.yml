@@ -24,5 +24,4 @@ jobs:
             }
             return 'dev'
       - name: test arguments
-        uses: actions/github-script@v2
         run: echo "${{ steps.set-target-branch.outputs.result }}"
