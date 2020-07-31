@@ -1,4 +1,4 @@
-name: pr-marge-test
+name: test workflow_dispatch
 
 on:
   workflow_dispatch:
