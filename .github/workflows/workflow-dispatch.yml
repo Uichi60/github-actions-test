@@ -1,0 +1,28 @@
+name: pr-marge-test
+
+on:
+  workflow_dispatch:
+    inputs:
+      branchName:
+        description: "branch name"
+        required: true
+        default: dev
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: target branch name
+        uses: actions/github-script@v2
+        id: set-target-branch
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          result-encoding: string
+          script: |
+            if (context.eventName == 'workflow_dispatch') {
+              return github.event.inputs.branchName
+            }
+            return 'dev'
+      - name: test arguments
+        uses: actions/github-script@v2
+        run: echo "${{ steps.set-target-branch.outputs.result }}"
