@@ -23,6 +23,7 @@ jobs:
               return process.env.INPUTS_BRANCH_NAME
             }
             return 'dev'
+        env:
           INPUTS_BRANCH_NAME: ${{github.event.inputs.branchName}}
       - name: test arguments
         run: echo "${{ steps.set-target-branch.outputs.result }}"
