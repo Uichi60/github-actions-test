@@ -20,7 +20,13 @@ jobs:
           result-encoding: string
           script: |
             if (context.eventName == 'workflow_dispatch') {
-              console.log(Object.keys(context.workflow));
+              console.log(context.payload);
+              console.log(context.eventName);
+              console.log(context.sha);
+              console.log(context.ref);
+              console.log(context.workflow);
+              console.log(context.action);
+              console.log(context.job);
               return process.env.INPUTS_BRANCH_NAME
             }
             return 'dev'
