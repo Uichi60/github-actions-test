@@ -2,7 +2,8 @@ name: pr-marge-test
 
 on:
   pull_request:
-    type: closed
+    types:
+      - closed
     branches:
       - master
 
@@ -13,4 +14,3 @@ jobs:
       - name: check head-ref
         if: startsWith(github.head_ref, 'feature')
         run: echo "complete"
-
