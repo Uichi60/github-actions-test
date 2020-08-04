@@ -2,11 +2,6 @@ name: test workflow_dispatch
 
 on:
   workflow_dispatch:
-    inputs:
-      branchName:
-        description: "branch name"
-        required: true
-        default: dev
   push:
     branches:
       - master
