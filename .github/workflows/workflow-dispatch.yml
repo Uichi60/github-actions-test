@@ -17,9 +17,6 @@ jobs:
           result-encoding: string
           script: |
             console.log(context.ref);
-            if (context.eventName == 'workflow_dispatch') {
-              return context.payload.inputs.branchName;
-            }
             return 'dev'
       - name: test arguments
         run: echo "${{ steps.set-target-branch.outputs.result }}"
