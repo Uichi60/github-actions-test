@@ -2,6 +2,15 @@ name: test workflow_dispatch
 
 on:
   workflow_dispatch:
+    inputs:
+      piyo:
+        default: default strings
+        description: test strings
+        required: true
+      fuga:
+        default: default strings
+        description: test strings
+        required: true
   push:
     branches:
       - master
