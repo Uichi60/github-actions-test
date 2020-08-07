@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       piyo:
-        default: default strings
+        default: default piyo strings
         description: test strings
         required: true
       fuga:
-        default: default strings
+        default: default fuga strings
         description: test strings
-        required: true
+        required: false
   push:
     branches:
       - master
