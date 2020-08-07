@@ -3,14 +3,10 @@ name: test workflow_dispatch
 on:
   workflow_dispatch:
     inputs:
-      piyo:
-        default: default strings
-        description: test piyo strings
+      piyopiyo:
+        description: "hogehoge"
         required: true
-      fuga:
-        default: default strings
-        description: test fuga strings
-        required: false
+        default: hugahuga
   push:
     branches:
       - master
